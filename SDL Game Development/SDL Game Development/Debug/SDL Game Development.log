@@ -1,0 +1,46 @@
+﻿  GameStateMachine.cpp
+  Generating Code...
+  Compiling...
+  main.cpp
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\main.cpp(4): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  StateParser.cpp
+  SDLGameObject.cpp
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\sdlgameobject.cpp(51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  PlayState.cpp
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\playstate.cpp(20): warning C4018: '<': signed/unsigned mismatch
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\playstate.cpp(33): warning C4018: '<': signed/unsigned mismatch
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\playstate.cpp(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\playstate.cpp(84): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\playstate.cpp(85): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\playstate.cpp(86): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\playstate.cpp(87): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\playstate.cpp(90): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\playstate.cpp(91): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\playstate.cpp(92): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\playstate.cpp(93): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  PauseState.cpp
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\pausestate.cpp(13): warning C4018: '<': signed/unsigned mismatch
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\pausestate.cpp(20): warning C4018: '<': signed/unsigned mismatch
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\pausestate.cpp(51): warning C4018: '<': signed/unsigned mismatch
+  MenuState.cpp
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\menustate.cpp(14): warning C4018: '<': signed/unsigned mismatch
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\menustate.cpp(21): warning C4018: '<': signed/unsigned mismatch
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\menustate.cpp(56): warning C4018: '<': signed/unsigned mismatch
+  MainMenuState.cpp
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\mainmenustate.cpp(40): warning C4018: '<': signed/unsigned mismatch
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\mainmenustate.cpp(50): warning C4018: '<': signed/unsigned mismatch
+  InputHandler.cpp
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\inputhandler.cpp(31): warning C4244: 'argument': conversion from 'Sint32' to 'float', possible loss of data
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\inputhandler.cpp(32): warning C4244: 'argument': conversion from 'Sint32' to 'float', possible loss of data
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\inputhandler.cpp(195): warning C4018: '<': signed/unsigned mismatch
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\inputhandler.cpp(243): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\inputhandler.cpp(246): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\inputhandler.cpp(256): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\inputhandler.cpp(259): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+  GameSystem.cpp
+  GameOverState.cpp
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\gameoverstate.cpp(13): warning C4018: '<': signed/unsigned mismatch
+c:\users\kevin\documents\visual studio 2015\projects\sdl game development\sdl game development\gameoverstate.cpp(20): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  SDL Game Development.vcxproj -> C:\Users\Kevin\documents\visual studio 2015\Projects\SDL Game Development\Debug\SDL Game Development.exe
+  SDL Game Development.vcxproj -> C:\Users\Kevin\documents\visual studio 2015\Projects\SDL Game Development\Debug\SDL Game Development.pdb (Partial PDB)

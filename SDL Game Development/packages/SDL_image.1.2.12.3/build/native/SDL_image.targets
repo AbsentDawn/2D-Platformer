@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="SDL_image_init">
+  <PropertyGroup Label="Default initializers for properties">
+    <Linkage-SDL_image Condition="'$(Linkage-SDL_image)' == ''">dynamic</Linkage-SDL_image>
+    <CallingConvention-SDL_image Condition="'$(CallingConvention-SDL_image)' == ''">cdecl</CallingConvention-SDL_image>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>HAS_SDL_IMAGE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Release and Win32 and v120" Condition="( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v120'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Release\Win32\v120\SDL_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Debug and Win32 and v120" Condition="( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v120'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Debug\Win32\v120\SDL_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Release and x64 and v120" Condition="( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v120'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Release\x64\v120\SDL_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Debug and x64 and v120" Condition="( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v120'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Debug\x64\v120\SDL_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Release and Win32 and v140" Condition="( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v140'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Release\Win32\v140\SDL_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Debug and Win32 and v140" Condition="( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Platform.ToLower())' == 'win32' And '$(PlatformToolset.ToLower())' == 'v140'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Debug\Win32\v140\SDL_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Release and x64 and v140" Condition="( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v140'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Release\x64\v140\SDL_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Debug and x64 and v140" Condition="( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Platform.ToLower())' == 'x64' And '$(PlatformToolset.ToLower())' == 'v140'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Debug\x64\v140\SDL_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\default-propertiesui.xml" />
+  </ItemGroup>
+  <UsingTask TaskName="SDL_image_Contains" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll" TaskFactory="CodeTaskFactory">
+    <ParameterGroup>
+      <Text Output="false" ParameterType="System.String" />
+      <Library Output="false" Required="true" ParameterType="System.String" />
+      <Value Output="false" Required="true" ParameterType="System.String" />
+      <Result Output="true" ParameterType="System.String" />
+    </ParameterGroup>
+    <Task>
+      <Code>Result = ((Text ?? "").Split(';').Contains(Library) ) ? Value : String.Empty;</Code>
+    </Task>
+  </UsingTask>
+  <Target Name="SDL_image_init">
+    <SDL_image_Contains Text="Linkage-dynamic" Library="SDL_image" Value="dynamic" Condition="'$(Linkage-SDL_image)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-SDL_image" />
+    </SDL_image_Contains>
+    <SDL_image_Contains Text="Linkage-static" Library="SDL_image" Value="static" Condition="'$(Linkage-SDL_image)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-SDL_image" />
+    </SDL_image_Contains>
+    <SDL_image_Contains Text="Linkage-ltcg" Library="SDL_image" Value="ltcg" Condition="'$(Linkage-SDL_image)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-SDL_image" />
+    </SDL_image_Contains>
+    <SDL_image_Contains Text="Linkage-sxs" Library="SDL_image" Value="sxs" Condition="'$(Linkage-SDL_image)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-SDL_image" />
+    </SDL_image_Contains>
+    <SDL_image_Contains Text="CallingConvention-cdecl" Library="SDL_image" Value="cdecl" Condition="'$(CallingConvention-SDL_image)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-SDL_image" />
+    </SDL_image_Contains>
+    <SDL_image_Contains Text="CallingConvention-stdcall" Library="SDL_image" Value="stdcall" Condition="'$(CallingConvention-SDL_image)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-SDL_image" />
+    </SDL_image_Contains>
+    <SDL_image_Contains Text="CallingConvention-fastcall" Library="SDL_image" Value="fastcall" Condition="'$(CallingConvention-SDL_image)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-SDL_image" />
+    </SDL_image_Contains>
+    <SDL_image_Contains Text="CallingConvention-thiscall" Library="SDL_image" Value="thiscall" Condition="'$(CallingConvention-SDL_image)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-SDL_image" />
+    </SDL_image_Contains>
+    <SDL_image_Contains Text="CallingConvention-clrcall" Library="SDL_image" Value="clrcall" Condition="'$(CallingConvention-SDL_image)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-SDL_image" />
+    </SDL_image_Contains>
+  </Target>
+</Project>
